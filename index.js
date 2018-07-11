@@ -18,7 +18,25 @@ function addToCart(item) {
 }
 
 function viewCart() {
-  // write your code here
+ var output = []
+  if (cart.length ==0) {
+    return "Your shopping cart is empty."
+  } else if (cart.length==1) {
+    output.push(` ${cart[0].itemName} at $${cart[0].itemPrice}`)
+  } else if (cart.length==2) {
+    output.push(` ${cart[0].itemName} at $${cart[0].itemPrice}`)
+    output.push(` and ${cart[1].itemName} at $${cart[1].itemPrice}`)
+  } else {
+    for (let i=0; i<cart.length; i++) {
+      if (i+1 == cart.length) {
+        output.push(` and ${cart[i].itemName} at $${cart[i].itemPrice}`)
+      } else {
+        output.push(` ${cart[i].itemName} at $${cart[i].itemPrice}`)
+      }
+    }
+  }
+  return `In your cart, you have${output.toString()}.`
+
 }
 
 function total() {
