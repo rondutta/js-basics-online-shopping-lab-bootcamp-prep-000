@@ -10,7 +10,11 @@ function setCart(c) {
 }
 
 function addToCart(item) {
- Object.assign()
+ let obj = new Object();
+ obj.itemName = item;
+ obj.itemPrice = parseInt(Math.random()*100);
+ cart.push(obj)
+ return `${obj.itemName} has been added to your cart.`
 }
 
 function viewCart() {
