@@ -10,7 +10,7 @@ function setCart(c) {
 }
 
 function addToCart(item) {
- let obj = new Object();
+ let obj = {};
  obj.itemName = item;
  obj.itemPrice = parseInt(Math.random()*100);
  cart.push(obj)
@@ -19,7 +19,7 @@ function addToCart(item) {
 
 function viewCart() {
  var output = [];
-  if (cart.length ==0) {
+  if (cart.length === 0) {
     return "Your shopping cart is empty."
   } else if (cart.length==1) {
     output.push(` ${cart[0].itemName} at $${cart[0].itemPrice}`)
